@@ -3,14 +3,14 @@
    ================================= */
 :root {
     --primary-color: #007BFF;
-    --primary-dark: #0056b3;
-    --secondary-color: #f8f9fa;
-    --dark-color: #212529;
-    --light-color: #ffffff;
-    --text-color: #343a40;
-    --text-muted: #6c757d;
+    --primary-dark: #000000;
+    --secondary-color: #467041;
+    --dark-color: #010101;
+    --light-color: #2f0f0f;
+    --text-color: #b4b0cd;
+    --text-muted: #f800c2;
     --font-family: 'Poppins', sans-serif;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow: 0 4px 12px rgba(0, 230, 242, 0.08);
     --border-radius: 8px;
 }
 
@@ -51,9 +51,10 @@ ul {
    (Arjuna.html, Saikon.html, etc.)
    ================================= */
 
+/* Header Portofolio */
 .header {
     background-color: var(--light-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(67, 181, 61, 0.05);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -95,6 +96,7 @@ ul {
     transition: color 0.3s;
 }
 
+/* Hero Section Portofolio */
 .hero-section {
     display: flex;
     align-items: center;
@@ -104,42 +106,212 @@ ul {
     gap: 40px;
     background-color: var(--light-color);
 }
-/* ... (Semua style lain untuk halaman portofolio) ... */
-.portfolio-section { padding: 80px 0; }
-.portfolio-section:nth-of-type(odd) { background-color: var(--light-color); }
-.portfolio-section h2 { font-size: 2.5em; text-align: center; margin-bottom: 50px; }
-.portfolio-section h2::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--primary-color); margin: 10px auto 0; }
-.section-content { max-width: 900px; margin: 0 auto; }
-.card { background-color: var(--light-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 30px; transition: transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
-.experience-grid, .skill-grid { display: grid; gap: 30px; }
-.experience-grid { grid-template-columns: 1fr; }
-.skill-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.experience-item h3 { color: var(--primary-color); }
-.skill-category h3 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-.contact-content { text-align: center; }
-.footer { background-color: var(--dark-color); color: #aaa; text-align: center; padding: 30px 0; margin-top: 40px; }
 
+.hero-text {
+    flex: 2;
+}
+
+.hero-text h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.hero-text .highlight {
+    color: var(--primary-color);
+}
+
+.hero-text .subtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* === PERBAIKAN GAMBAR BESAR ADA DI SINI === */
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;    /* Tidak akan lebih lebar dari kontainernya */
+    width: 300px;       /* Atur lebar tetap */
+    height: 300px;      /* Atur tinggi tetap */
+    border-radius: 50%; /* Membuatnya lingkaran */
+    border: 8px solid var(--light-color);
+    box-shadow: 0 10px 30px rgba(174, 2, 2, 0.1);
+    object-fit: cover;  /* Memastikan gambar pas di lingkaran tanpa gepeng */
+}
+
+/* Section Umum Portofolio */
+.portfolio-section {
+    padding: 80px 0;
+}
+
+.portfolio-section:nth-of-type(odd) {
+    background-color: var(--light-color);
+}
+
+.portfolio-section h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+    position: relative;
+}
+
+.portfolio-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+}
+
+.section-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.experience-grid,
+.skill-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.experience-grid {
+    grid-template-columns: 1fr;
+}
+
+.skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.experience-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.experience-item .dates {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    font-style: italic;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.skill-category h3 {
+    font-size: 1.3em;
+    color: var(--dark-color);
+    border-bottom: 2px solid #523737;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skill-category li {
+    margin-bottom: 8px;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: #0b9b43;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
 
 /* =================================
    STYLE BARU UNTUK LANDING PAGE
    (Index.html)
    ================================= */
 .landing-page-body {
-    background-color: #e6f0ff; /* Latar belakang biru muda */
+    background-color: #4c5b32; /* Latar belakang biru muda */
 }
 
-/* Header Landing Page (Termasuk perbaikan navbar) */
+/* Header Landing Page */
 .landing-header {
     background-color: var(--light-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(146, 146, 146, 0.05);
     padding: 15px 0;
 }
 
 .landing-header-content {
     display: flex;
-    justify-content: space-between; /* Logo di kiri, nav di kanan */
-    align-items: center; /* Menjaga tetap sejajar */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-group {
@@ -161,10 +333,9 @@ ul {
     color: var(--dark-color);
 }
 
-/* Ini merapikan navigasi di pojok kanan atas */
 .landing-nav ul {
     display: flex;
-    gap: 20px; /* Jarak antar link */
+    gap: 20px;
 }
 
 .landing-nav a {
@@ -181,7 +352,7 @@ ul {
 .hero-landing {
     text-align: center;
     padding: 80px 20px;
-    background-color: #cadcf8; /* Warna latar belakang bagian hero */
+    background-color: #ff4d00;
     border-radius: var(--border-radius);
     margin-top: 30px;
     box-shadow: var(--shadow);
@@ -224,18 +395,17 @@ ul {
 
 .member-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 248, 149, 0.15);
 }
 
-/* Ini membuat gambar profil menjadi lingkaran */
 .member-card img {
     width: 180px;
     height: 180px;
-    border-radius: 50%; /* Membuat gambar lingkaran */
+    border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--primary-color); /* Border biru */
+    border: 5px solid var(--primary-color);
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(117, 247, 10, 0.1);
 }
 
 .member-card h3 {
@@ -253,20 +423,76 @@ ul {
 /* Footer Landing Page */
 .landing-footer {
     background-color: var(--dark-color);
-    color: #aaa;
+    color: #947474;
     text-align: center;
     padding: 25px 0;
     margin-top: 50px;
 }
 
-/* Responsif */
+/* =================================
+   RESPONSIVE (Untuk HP)
+   ================================= */
 @media (max-width: 768px) {
-    .landing-header-content, .hero-section {
+    /* Responsif untuk Halaman Portofolio */
+    .header-content {
         flex-direction: column;
         gap: 15px;
     }
-    .landing-nav ul { flex-direction: column; gap: 10px; }
-    .hero-landing h1 { font-size: 2.5em; }
-    .member-cards { flex-direction: column; align-items: center; gap: 30px; }
-    .member-card { width: 90%; max-width: 300px; }
+    
+    .main-nav ul {
+        gap: 15px;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-text .subtitle {
+        font-size: 1.2em;
+    }
+    
+    .hero-image img {
+        width: 200px; /* Ukuran gambar hero di HP */
+        height: 200px;
+    }
+
+    .portfolio-section {
+        padding: 60px 0;
+    }
+
+    .portfolio-section h2 {
+        font-size: 2em;
+    }
+
+    /* Responsif untuk Halaman Utama (Index) */
+    .landing-header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .landing-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-landing h1 {
+        font-size: 2.5em;
+    }
+
+    .member-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .member-card {
+        width: 90%;
+        max-width: 300px;
+    }
 }
